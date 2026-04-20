@@ -13,37 +13,28 @@
   <meta property="og:image" content="https://weekdish.app/og.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Rounded:wght@300;400;500;700&family=Nunito:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap"
     rel="stylesheet">
   <style>
-    /* ─── DESIGN TOKENS ─────────────────────────────────────── */
     :root {
       --terracotta: #FF6B35;
       --terracotta-light: #FFE8DE;
       --terracotta-dark: #E85A25;
       --navy: #004E89;
       --navy-light: #E0ECF6;
-      --navy-dark: #003A66;
       --amber: #F7B801;
-      --amber-light: #FFF4D1;
       --paper: #FAF8F5;
       --cloud: #F2EFE9;
       --silver: #D4CFC7;
       --gray: #9E9890;
       --graphite: #6B6560;
       --ink: #1C1A17;
-      --success: #34C759;
-      --white: #FFFFFF;
-      --radius-sm: 10px;
       --radius-md: 16px;
       --radius-lg: 24px;
-      --radius-xl: 32px;
       --shadow-sm: 0 2px 8px rgba(28, 26, 23, 0.08);
       --shadow-md: 0 8px 32px rgba(28, 26, 23, 0.12);
-      --shadow-lg: 0 24px 64px rgba(28, 26, 23, 0.16);
     }
 
-    /* ─── RESET ─────────────────────────────────────────────── */
     *,
     *::before,
     *::after {
@@ -74,11 +65,6 @@
       color: inherit;
     }
 
-    /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
-    .font-rounded {
-      font-family: 'Nunito', sans-serif;
-    }
-
     h1,
     h2,
     h3 {
@@ -86,7 +72,6 @@
       line-height: 1.1;
     }
 
-    /* ─── LAYOUT ────────────────────────────────────────────── */
     .container {
       max-width: 1080px;
       margin: 0 auto;
@@ -97,7 +82,7 @@
       padding: 96px 0;
     }
 
-    /* ─── NAV ───────────────────────────────────────────────── */
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -167,7 +152,7 @@
       transform: scale(0.96);
     }
 
-    /* ─── HERO ──────────────────────────────────────────────── */
+    /* HERO */
     #hero {
       padding-top: 140px;
       padding-bottom: 80px;
@@ -179,10 +164,7 @@
       position: absolute;
       inset: 0;
       z-index: 0;
-      background:
-        radial-gradient(ellipse 700px 500px at 80% -10%, rgba(255, 107, 53, 0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 500px 400px at -10% 60%, rgba(0, 78, 137, 0.08) 0%, transparent 70%),
-        radial-gradient(ellipse 300px 300px at 50% 100%, rgba(247, 184, 1, 0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse 700px 500px at 80% -10%, rgba(255, 107, 53, 0.12) 0%, transparent 70%), radial-gradient(ellipse 500px 400px at -10% 60%, rgba(0, 78, 137, 0.08) 0%, transparent 70%), radial-gradient(ellipse 300px 300px at 50% 100%, rgba(247, 184, 1, 0.08) 0%, transparent 70%);
     }
 
     .hero-grid {
@@ -190,8 +172,7 @@
       inset: 0;
       z-index: 0;
       opacity: 0.03;
-      background-image: linear-gradient(var(--ink) 1px, transparent 1px),
-        linear-gradient(90deg, var(--ink) 1px, transparent 1px);
+      background-image: linear-gradient(var(--ink) 1px, transparent 1px), linear-gradient(90deg, var(--ink) 1px, transparent 1px);
       background-size: 48px 48px;
     }
 
@@ -219,10 +200,6 @@
       text-transform: uppercase;
       margin-bottom: 20px;
       animation: fadeUp 0.6s ease both;
-    }
-
-    .hero-eyebrow span {
-      font-size: 14px;
     }
 
     .hero-h1 {
@@ -330,7 +307,7 @@
       color: var(--terracotta);
     }
 
-    /* ─── PHONE MOCKUP ──────────────────────────────────────── */
+    /* PHONE */
     .hero-visual {
       display: flex;
       justify-content: center;
@@ -375,7 +352,6 @@
       padding: 44px 0 0;
     }
 
-    /* Screen status bar */
     .screen-status {
       display: flex;
       justify-content: space-between;
@@ -387,7 +363,6 @@
       color: var(--ink);
     }
 
-    /* Screen header */
     .screen-header {
       padding: 16px 20px 12px;
     }
@@ -433,7 +408,6 @@
       background: var(--terracotta);
     }
 
-    /* Meal rows */
     .meal-day {
       padding: 8px 20px;
       border-bottom: 1px solid var(--cloud);
@@ -507,7 +481,6 @@
       margin-bottom: 2px;
     }
 
-    /* Floating add button */
     .screen-fab {
       position: absolute;
       bottom: 16px;
@@ -527,13 +500,11 @@
       line-height: 1;
     }
 
-    /* Tab bar */
     .screen-tabbar {
       display: flex;
       padding: 10px 0 16px;
       border-top: 1px solid var(--cloud);
       background: white;
-      margin-top: 0;
     }
 
     .screen-tab {
@@ -559,11 +530,6 @@
       color: var(--terracotta);
     }
 
-    .screen-tab.active .tab-icon {
-      filter: none;
-    }
-
-    /* Floating badge on phone */
     .phone-badge {
       position: absolute;
       background: white;
@@ -606,8 +572,6 @@
       background: var(--navy-light);
     }
 
-    .badge-text {}
-
     .badge-label {
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
@@ -632,7 +596,7 @@
       }
     }
 
-    /* ─── PROBLEM ───────────────────────────────────────────── */
+    /* PROBLEM */
     #problem {
       background: var(--ink);
       color: white;
@@ -730,7 +694,7 @@
       line-height: 1.5;
     }
 
-    /* ─── FEATURES ──────────────────────────────────────────── */
+    /* FEATURES */
     #features {
       background: var(--paper);
     }
@@ -867,7 +831,7 @@
       margin-top: 16px;
     }
 
-    /* ─── HOW IT WORKS ──────────────────────────────────────── */
+    /* HOW */
     #how {
       background: var(--cloud);
     }
@@ -908,7 +872,6 @@
       font-size: 26px;
       font-weight: 900;
       margin: 0 auto 24px;
-      position: relative;
     }
 
     .step:nth-child(1) .step-number {
@@ -943,7 +906,7 @@
       line-height: 1.6;
     }
 
-    /* ─── SOCIAL PROOF ──────────────────────────────────────── */
+    /* PROOF */
     #proof {
       background: white;
       padding: 64px 0;
@@ -981,7 +944,7 @@
       line-height: 1.4;
     }
 
-    /* ─── WAITLIST ──────────────────────────────────────────── */
+    /* WAITLIST */
     #waitlist {
       background: linear-gradient(135deg, var(--terracotta) 0%, #E85A25 100%);
       padding: 96px 0;
@@ -993,9 +956,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(247, 184, 1, 0.15) 0%, transparent 50%);
+      background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(247, 184, 1, 0.15) 0%, transparent 50%);
     }
 
     .waitlist-inner {
@@ -1114,7 +1075,7 @@
       flex-shrink: 0;
     }
 
-    /* ─── FOOTER ────────────────────────────────────────────── */
+    /* FOOTER */
     footer {
       background: var(--ink);
       color: white;
@@ -1149,21 +1110,6 @@
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
       font-size: 18px;
-      color: white;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 28px;
-    }
-
-    .footer-links a {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.5);
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
       color: white;
     }
 
@@ -1245,7 +1191,7 @@
       }
     }
 
-    /* ─── ANIMATIONS ────────────────────────────────────────── */
+    /* ANIMATIONS */
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -1281,7 +1227,44 @@
       transition-delay: 0.3s;
     }
 
-    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    /* SUCCESS */
+    .success-msg {
+      display: none;
+      text-align: center;
+      color: white;
+    }
+
+    .success-msg.show {
+      display: block;
+      animation: fadeUp 0.4s ease;
+    }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .success-msg h3 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .success-msg p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 16px;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-inner {
         grid-template-columns: 1fr;
@@ -1340,10 +1323,6 @@
         grid-column: span 1;
       }
 
-      .proof-inner {
-        grid-template-columns: 1fr 1fr;
-      }
-
       .footer-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -1357,57 +1336,16 @@
         min-width: unset;
       }
     }
-
-    /* ─── SUCCESS STATE ─────────────────────────────────────── */
-    .success-msg {
-      display: none;
-      text-align: center;
-      color: white;
-    }
-
-    .success-msg.show {
-      display: block;
-      animation: fadeUp 0.4s ease;
-    }
-
-    .success-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.2);
-      margin: 0 auto 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-    }
-
-    .success-msg h3 {
-      font-family: 'Nunito', sans-serif;
-      font-size: 24px;
-      font-weight: 900;
-      color: white;
-      margin-bottom: 8px;
-    }
-
-    .success-msg p {
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 16px;
-    }
   </style>
 </head>
-<script src="https://tally.so/widgets/embed.js"></script>
 
 <body>
 
-  <!-- ── NAV ───────────────────────────────────────────── -->
   <nav id="navbar">
     <div class="nav-logo">
       <div class="nav-icon">
         <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Plate -->
           <circle cx="10" cy="11" r="7" stroke="white" stroke-width="1.5" />
-          <!-- Fork W mark -->
           <path
             d="M7 7.5V9.5M9.5 7.5V9.5M12 7.5V9.5M7.5 9.5C7.5 10.5 9.5 11 9.75 9.5M9.5 9.5C9.5 10.5 11.5 11 11.75 9.5"
             stroke="white" stroke-width="1.5" stroke-linecap="round" />
@@ -1419,7 +1357,6 @@
       Waitlist</button>
   </nav>
 
-  <!-- ── HERO ──────────────────────────────────────────── -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
@@ -1439,7 +1376,6 @@
         </div>
         <div class="hero-visual">
           <div class="phone-wrap">
-            <!-- Left badge -->
             <div class="phone-badge left">
               <div class="badge-icon orange">🛒</div>
               <div class="badge-text">
@@ -1447,7 +1383,6 @@
                 <div class="badge-sub">This week's list</div>
               </div>
             </div>
-            <!-- Right badge -->
             <div class="phone-badge right">
               <div class="badge-icon blue">👥</div>
               <div class="badge-text">
@@ -1455,15 +1390,11 @@
                 <div class="badge-sub">Just now</div>
               </div>
             </div>
-            <!-- Phone frame -->
             <div class="phone-frame">
               <div class="phone-notch"></div>
               <div class="phone-screen">
                 <div class="screen-content">
-                  <div class="screen-status">
-                    <span>9:41</span>
-                    <span>●●●</span>
-                  </div>
+                  <div class="screen-status"><span>9:41</span><span>●●●</span></div>
                   <div class="screen-header">
                     <div class="screen-eyebrow">THIS WEEK</div>
                     <div class="screen-title">Apr 14–20</div>
@@ -1473,7 +1404,6 @@
                       <span class="screen-stat">2 AI picks</span>
                     </div>
                   </div>
-                  <!-- Day rows -->
                   <div class="meal-day">
                     <div class="meal-day-label">MON 14</div>
                     <div class="meal-cards-row">
@@ -1523,22 +1453,11 @@
                   <div class="screen-fab">+</div>
                 </div>
                 <div class="screen-tabbar">
-                  <div class="screen-tab active">
-                    <span class="tab-icon">📅</span>
-                    <span class="tab-label">Week</span>
+                  <div class="screen-tab active"><span class="tab-icon">📅</span><span class="tab-label">Week</span>
                   </div>
-                  <div class="screen-tab">
-                    <span class="tab-icon">🛒</span>
-                    <span class="tab-label">List</span>
-                  </div>
-                  <div class="screen-tab">
-                    <span class="tab-icon">📖</span>
-                    <span class="tab-label">Recipes</span>
-                  </div>
-                  <div class="screen-tab">
-                    <span class="tab-icon">🥫</span>
-                    <span class="tab-label">Pantry</span>
-                  </div>
+                  <div class="screen-tab"><span class="tab-icon">🛒</span><span class="tab-label">List</span></div>
+                  <div class="screen-tab"><span class="tab-icon">📖</span><span class="tab-label">Recipes</span></div>
+                  <div class="screen-tab"><span class="tab-icon">🥫</span><span class="tab-label">Pantry</span></div>
                 </div>
               </div>
             </div>
@@ -1548,16 +1467,14 @@
     </div>
   </section>
 
-  <!-- ── PROBLEM ────────────────────────────────────────── -->
   <section id="problem">
     <div class="container">
       <div class="problem-inner">
         <div class="reveal">
           <div class="problem-label">⚡ THE PROBLEM</div>
           <h2>Meal planning is <em>two</em> separate, tedious tasks.</h2>
-          <p>You plan the week. Then you figure out what to buy. Then you're at the store with a chaotic list.
-            <br><br>Most apps only solve half the problem.
-          </p>
+          <p>You plan the week. Then you figure out what to buy. Then you're at the store with a chaotic
+            list.<br><br>Most apps only solve half the problem.</p>
         </div>
         <div class="problem-cards reveal reveal-delay-1">
           <div class="problem-card">
@@ -1589,7 +1506,6 @@
     </div>
   </section>
 
-  <!-- ── FEATURES ───────────────────────────────────────── -->
   <section id="features">
     <div class="container">
       <div class="section-header reveal">
@@ -1602,8 +1518,8 @@
           <div class="feature-icon">📅</div>
           <div class="feature-title">Weekly Menu Planner</div>
           <div class="feature-desc">A beautiful 7×3 grid — 7 days, 3 meals each. Plan your whole week visually in
-            minutes. Drag to reorder, tap to edit, see your week at a glance.</div>
-          <span class="feature-tag">Core Feature</span>
+            minutes. Drag to reorder, tap to edit, see your week at a glance.</div><span class="feature-tag">Core
+            Feature</span>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-icon">🛒</div>
@@ -1639,7 +1555,6 @@
     </div>
   </section>
 
-  <!-- ── HOW IT WORKS ───────────────────────────────────── -->
   <section id="how">
     <div class="container">
       <div class="section-header reveal" style="text-align:center;">
@@ -1669,7 +1584,6 @@
     </div>
   </section>
 
-  <!-- ── PROOF / STATS ──────────────────────────────────── -->
   <section id="proof">
     <div class="container">
       <div class="proof-inner reveal">
@@ -1693,7 +1607,6 @@
     </div>
   </section>
 
-  <!-- ── WAITLIST ────────────────────────────────────────── -->
   <section id="waitlist">
     <div class="container">
       <div class="waitlist-inner">
@@ -1731,7 +1644,6 @@
     </div>
   </section>
 
-  <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer>
     <div class="container">
       <div class="footer-inner">
@@ -1766,74 +1678,81 @@
     </div>
   </footer>
 
+  <script src="https://tally.so/widgets/embed.js"></script>
   <script>
-    // ── Scroll reveal ─────────────────────────────────────
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // ── Config ────────────────────────────────────────────
+    const TALLY_FORM_ID = '44NdlO';
 
-    // ── Nav scroll effect ─────────────────────────────────
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 20) {
-        nav.style.boxShadow = '0 4px 24px rgba(28,26,23,0.08)';
-      } else {
-        nav.style.boxShadow = 'none';
+    // ── Tally submit ──────────────────────────────────────
+    async function submitToTally(email) {
+      try {
+        await fetch(`https://tally.so/r/${TALLY_FORM_ID}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: `email=${encodeURIComponent(email)}`
+        });
+      } catch (err) {
+        console.error('Tally error:', err);
+        // Fallo silencioso — el usuario ve éxito igualmente
       }
-    });
-
-    // ── Email signup ──────────────────────────────────────
-    function handleHeroSignup() {
-      const email = document.getElementById('hero-email').value;
-      if (!email || !email.includes('@')) {
-        document.getElementById('hero-email').style.borderColor = '#FF3B30';
-        setTimeout(() => document.getElementById('hero-email').style.borderColor = '', 1500);
-        return;
-      }
-      // TODO: Connect to Tally.so or EmailOctopus
-      document.getElementById('hero-email').value = '';
-      document.getElementById('hero-email').placeholder = '🎉 You\'re on the list!';
-      document.getElementById('signup-count').textContent = '128 people';
-      document.getElementById('signup-count-2').textContent = '128 people';
     }
 
-    function handleWaitlistSignup() {
-      const email = document.getElementById('waitlist-email').value;
-      if (!email || !email.includes('@')) {
-        document.getElementById('waitlist-email').style.outline = '2px solid rgba(255,100,100,0.5)';
-        setTimeout(() => document.getElementById('waitlist-email').style.outline = '', 1500);
-        return;
-      }
-      // TODO: Connect to Tally.so or EmailOctopus
+    // ── Show success state ────────────────────────────────
+    function showSuccess() {
       document.getElementById('waitlist-form-block').style.display = 'none';
       document.getElementById('success-msg').classList.add('show');
     }
 
-    // ── Enter key on inputs ───────────────────────────────
+    // ── Hero form ─────────────────────────────────────────
+    async function handleHeroSignup() {
+      const input = document.getElementById('hero-email');
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) {
+        input.style.borderColor = '#FF3B30';
+        setTimeout(() => input.style.borderColor = '', 1500);
+        return;
+      }
+      await submitToTally(email);
+      input.value = '';
+      input.placeholder = '🎉 You\'re on the list!';
+      document.getElementById('signup-count').textContent = '128 people';
+      document.getElementById('signup-count-2').textContent = '128 people';
+    }
+
+    // ── Waitlist form ─────────────────────────────────────
+    async function handleWaitlistSignup() {
+      const input = document.getElementById('waitlist-email');
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) {
+        input.style.outline = '2px solid rgba(255,100,100,0.5)';
+        setTimeout(() => input.style.outline = '', 1500);
+        return;
+      }
+      await submitToTally(email);
+      showSuccess();
+    }
+
+    // ── Enter key ─────────────────────────────────────────
     document.getElementById('hero-email').addEventListener('keydown', e => {
       if (e.key === 'Enter') handleHeroSignup();
     });
     document.getElementById('waitlist-email').addEventListener('keydown', e => {
       if (e.key === 'Enter') handleWaitlistSignup();
     });
-    async function handleSignup(email) {
-      const formId = 'ABC123'; // Tu ID aquí
 
-      await fetch(`https://tally.so/r/EkbYbL`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `email=${encodeURIComponent(email)}`
+    // ── Scroll reveal ─────────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
       });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      // Muestra el estado de éxito
-      showSuccess();
-    }
+    // ── Nav shadow on scroll ──────────────────────────────
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').style.boxShadow =
+        window.scrollY > 20 ? '0 4px 24px rgba(28,26,23,0.08)' : 'none';
+    });
   </script>
 </body>
 
