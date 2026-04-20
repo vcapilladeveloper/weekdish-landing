@@ -1683,18 +1683,35 @@
     // ── Config ────────────────────────────────────────────
     const TALLY_FORM_ID = '44NdlO';
 
-    // ── Tally submit ──────────────────────────────────────
-    async function submitToTally(email) {
-      try {
-        await fetch(`https://tally.so/r/${TALLY_FORM_ID}`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: `email=${encodeURIComponent(email)}`
-        });
-      } catch (err) {
-        console.error('Tally error:', err);
-        // Fallo silencioso — el usuario ve éxito igualmente
-      }
+    // ── Tally submit (hidden iframe — avoids CORS) ────────
+    function submitToTally(email) {
+      return new Promise((resolve) => {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.name = 'tally-iframe';
+        document.body.appendChild(iframe);
+
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = `https://tally.so/r/${TALLY_FORM_ID}`;
+        form.target = 'tally-iframe';
+        form.style.display = 'none';
+
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'email';
+        input.value = email;
+        form.appendChild(input);
+
+        document.body.appendChild(form);
+        form.submit();
+
+        setTimeout(() => {
+          document.body.removeChild(form);
+          document.body.removeChild(iframe);
+          resolve();
+        }, 1000);
+      });
     }
 
     // ── Show success state ────────────────────────────────
