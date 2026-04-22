@@ -1368,11 +1368,11 @@
           <p class="hero-sub">The iOS app that turns your weekly menu into a smart shopping list — automatically. Built
             for couples and families who plan together.</p>
           <div class="hero-form">
-            <input type="email" class="hero-input" id="hero-email" placeholder="your@email.com" />
-            <button class="hero-btn" onclick="handleHeroSignup()">Get Early Access</button>
+            <iframe
+              data-tally-src="https://tally.so/embed/44NdlO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy" width="100%" height="214" frameborder="0" marginheight="0" marginwidth="0"
+              title="Weekdish Waitlist"></iframe>
           </div>
-          <p class="hero-meta"><strong id="signup-count">127 people</strong> already on the waitlist · Free at launch
-          </p>
         </div>
         <div class="hero-visual">
           <div class="phone-wrap">
@@ -1645,9 +1645,6 @@
       </div>
     </div>
   </section>
-  <iframe data-tally-src="https://tally.so/embed/44NdlO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-    loading="lazy" width="100%" height="214" frameborder="0" marginheight="0" marginwidth="0"
-    title="Weekdish Waitlist"></iframe>
   <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
   <footer>
     <div class="container">
@@ -1685,82 +1682,11 @@
 
   <script src="https://tally.so/widgets/embed.js"></script>
   <script>
-    // ── Config ────────────────────────────────────────────
-    const TALLY_FORM_ID = '44NdlO';
-
-    // ── Tally submit (hidden iframe — avoids CORS) ────────
-    function submitToTally(email) {
-      return new Promise((resolve) => {
-        const iframe = document.createElement('iframe');
-        iframe.style.display = 'none';
-        iframe.name = 'tally-iframe';
-        document.body.appendChild(iframe);
-
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = `https://tally.so/r/${TALLY_FORM_ID}`;
-        form.target = 'tally-iframe';
-        form.style.display = 'none';
-
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'email';
-        input.value = email;
-        form.appendChild(input);
-
-        document.body.appendChild(form);
-        form.submit();
-
-        setTimeout(() => {
-          document.body.removeChild(form);
-          document.body.removeChild(iframe);
-          resolve();
-        }, 1000);
-      });
-    }
-
     // ── Show success state ────────────────────────────────
     function showSuccess() {
       document.getElementById('waitlist-form-block').style.display = 'none';
       document.getElementById('success-msg').classList.add('show');
     }
-
-    // ── Hero form ─────────────────────────────────────────
-    async function handleHeroSignup() {
-      const input = document.getElementById('hero-email');
-      const email = input.value.trim();
-      if (!email || !email.includes('@')) {
-        input.style.borderColor = '#FF3B30';
-        setTimeout(() => input.style.borderColor = '', 1500);
-        return;
-      }
-      await submitToTally(email);
-      input.value = '';
-      input.placeholder = '🎉 You\'re on the list!';
-      document.getElementById('signup-count').textContent = '128 people';
-      document.getElementById('signup-count-2').textContent = '128 people';
-    }
-
-    // ── Waitlist form ─────────────────────────────────────
-    async function handleWaitlistSignup() {
-      const input = document.getElementById('waitlist-email');
-      const email = input.value.trim();
-      if (!email || !email.includes('@')) {
-        input.style.outline = '2px solid rgba(255,100,100,0.5)';
-        setTimeout(() => input.style.outline = '', 1500);
-        return;
-      }
-      await submitToTally(email);
-      showSuccess();
-    }
-
-    // ── Enter key ─────────────────────────────────────────
-    document.getElementById('hero-email').addEventListener('keydown', e => {
-      if (e.key === 'Enter') handleHeroSignup();
-    });
-    document.getElementById('waitlist-email').addEventListener('keydown', e => {
-      if (e.key === 'Enter') handleWaitlistSignup();
-    });
 
     // ── Scroll reveal ─────────────────────────────────────
     const observer = new IntersectionObserver((entries) => {
