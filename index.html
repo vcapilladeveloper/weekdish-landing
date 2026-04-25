@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Weekdish – Your week of dishes, effortlessly planned</title>
+  <title>Weekdish - Your week of dishes, effortlessly planned</title>
   <meta name="description"
     content="Plan weekly meals with your partner and let Weekdish build your shopping list automatically. Native iOS app coming July 2026.">
-  <meta property="og:title" content="Weekdish – Your week of dishes, effortlessly planned">
+  <meta property="og:title" content="Weekdish - Your week of dishes, effortlessly planned">
   <meta property="og:description"
     content="Plan meals together. Shop smarter. Native iOS, offline-first, real-time collaboration.">
   <meta property="og:image" content="https://weekdish.app/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Weekdish – Your week of dishes, effortlessly planned">
+  <meta name="twitter:title" content="Weekdish - Your week of dishes, effortlessly planned">
   <meta name="twitter:description"
     content="Plan meals together. Shop smarter. Native iOS, offline-first, real-time collaboration.">
   <meta name="twitter:image" content="https://weekdish.app/og.png">
@@ -32,8 +32,15 @@
     <div class="nav-icon" style="background:none; padding:0; box-shadow:none;">
       <img src="icon-72.png" width="36" height="36" style="border-radius:9px;" alt="Weekdish">
     </div>
-    <button class="nav-cta" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join
-      Waitlist</button>
+    <div class="nav-actions">
+      <select id="language-switcher" class="lang-select" aria-label="Language selector">
+        <option value="es">ES</option>
+        <option value="ca">CA</option>
+        <option value="en">EN</option>
+      </select>
+      <button class="nav-cta" data-i18n="nav.cta"
+        onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join Waitlist</button>
+    </div>
   </nav>
 
   <section id="hero">
@@ -42,26 +49,27 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-content">
-          <div class="hero-eyebrow"><span>🍽️</span> COMING SOON</div>
+          <div class="hero-eyebrow"><span>🍽️</span> <span data-i18n="hero.eyebrow">COMING SOON</span></div>
 
-          <h1 class="hero-h1">
+          <h1 class="hero-h1" data-i18n-html="hero.title">
             Plan your week.<br>
             <em>Your shopping list builds itself.</em>
           </h1>
 
-          <p class="hero-sub">
+          <p class="hero-sub" data-i18n="hero.sub">
             Stop juggling notes, recipes, and grocery lists. Weekdish turns your weekly meals into a complete shopping
-            list — automatically. Built for couples who plan together.
+            list - automatically. Built for couples who plan together.
           </p>
 
           <div class="hero-form" style="animation: fadeUp 0.6s 0.3s ease both;">
-            <button class="hero-btn" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">
-              Join the Waitlist →
+            <button class="hero-btn" data-i18n="hero.button"
+              onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">
+              Join the Waitlist ->
             </button>
           </div>
 
-          <p class="hero-meta">
-            Replaces your notes app, recipe app, and shopping list — in one place.
+          <p class="hero-meta" data-i18n="hero.meta">
+            Replaces your notes app, recipe app, and shopping list - in one place.
           </p>
         </div>
         <div class="hero-visual">
@@ -69,15 +77,15 @@
             <div class="phone-badge left">
               <div class="badge-icon orange">🛒</div>
               <div class="badge-text">
-                <div class="badge-label">24 items ready</div>
-                <div class="badge-sub">This week's list</div>
+                <div class="badge-label" data-i18n="badges.itemsReady">24 items ready</div>
+                <div class="badge-sub" data-i18n="badges.weekList">This week's list</div>
               </div>
             </div>
             <div class="phone-badge right">
               <div class="badge-icon blue">👥</div>
               <div class="badge-text">
-                <div class="badge-label">Em added a meal</div>
-                <div class="badge-sub">Just now</div>
+                <div class="badge-label" data-i18n="badges.mealAdded">Em added a meal</div>
+                <div class="badge-sub" data-i18n="badges.justNow">Just now</div>
               </div>
             </div>
             <img src="iphone.png" alt="Weekdish-screenshot">
@@ -91,11 +99,11 @@
     <div class="container">
       <div class="problem-inner">
         <div class="reveal">
-          <div class="problem-label">⚡ THE PROBLEM</div>
-          <h2>Meal planning is <em>two</em> separate, tedious tasks.</h2>
-          <p>
+          <div class="problem-label" data-i18n="problem.label">⚡ THE PROBLEM</div>
+          <h2 data-i18n-html="problem.title">Meal planning is <em>two</em> separate, tedious tasks.</h2>
+          <p data-i18n-html="problem.copy">
             You plan meals in one place. Write your shopping list in another. Then fix it again at the store.<br><br>
-            It’s repetitive, messy, and takes way more time than it should.<br><br>
+            It's repetitive, messy, and takes way more time than it should.<br><br>
             Most apps solve only half of it. Weekdish connects everything.
           </p>
         </div>
@@ -103,24 +111,28 @@
           <div class="problem-card">
             <div class="problem-card-icon">⏱️</div>
             <div>
-              <div class="problem-card-title">50+ minutes every week</div>
-              <div class="problem-card-desc">Planning meals + making the shopping list across separate apps, every
-                single week.</div>
+              <div class="problem-card-title" data-i18n="problem.cards.time.title">50+ minutes every week</div>
+              <div class="problem-card-desc" data-i18n="problem.cards.time.desc">Planning meals + making the shopping
+                list across separate apps, every single week.</div>
             </div>
           </div>
           <div class="problem-card">
             <div class="problem-card-icon">📱</div>
             <div>
-              <div class="problem-card-title">Apps that don't talk to each other</div>
-              <div class="problem-card-desc">Your recipe app, notes app, and shopping app are all disconnected islands.
+              <div class="problem-card-title" data-i18n="problem.cards.apps.title">Apps that don't talk to each other
+              </div>
+              <div class="problem-card-desc" data-i18n="problem.cards.apps.desc">Your recipe app, notes app, and
+                shopping app are all disconnected islands.
               </div>
             </div>
           </div>
           <div class="problem-card">
             <div class="problem-card-icon">👫</div>
             <div>
-              <div class="problem-card-title">Collaboration is an afterthought</div>
-              <div class="problem-card-desc">Sharing a list via WhatsApp. Duplicate items. "Did you add eggs?" — every
+              <div class="problem-card-title" data-i18n="problem.cards.collab.title">Collaboration is an afterthought
+              </div>
+              <div class="problem-card-desc" data-i18n="problem.cards.collab.desc">Sharing a list via WhatsApp.
+                Duplicate items. "Did you add eggs?" - every
                 week.</div>
             </div>
           </div>
@@ -132,53 +144,56 @@
   <section id="features">
     <div class="container">
       <div class="section-header reveal">
-        <div class="section-label">✨ FEATURES</div>
-        <h2 class="section-title">One app. The complete flow.</h2>
-        <p class="section-sub">From empty week to full fridge — without switching apps or retyping anything.</p>
+        <div class="section-label" data-i18n="features.label">✨ FEATURES</div>
+        <h2 class="section-title" data-i18n="features.title">One app. The complete flow.</h2>
+        <p class="section-sub" data-i18n="features.sub">From empty week to full fridge - without switching apps or
+          retyping anything.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card featured reveal">
           <div class="feature-icon">📅</div>
-          <div class="feature-title">Weekly Menu Planner</div>
-          <div class="feature-desc">
+          <div class="feature-title" data-i18n="features.cards.planner.title">Weekly Menu Planner</div>
+          <div class="feature-desc" data-i18n="features.cards.planner.desc">
             See your entire week at a glance. Plan meals in minutes, move things around effortlessly, and always know
-            what’s coming next.
-          </div><span class="feature-tag">Core
+            what's coming next.
+          </div><span class="feature-tag" data-i18n="features.cards.planner.tag">Core
             Feature</span>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-icon">🛒</div>
-          <div class="feature-title">Smart Shopping List</div>
-          <div class="feature-desc">
-            Your list builds itself from your meals. Every ingredient, organized by aisle — ready when you are. No
+          <div class="feature-title" data-i18n="features.cards.shopping.title">Smart Shopping List</div>
+          <div class="feature-desc" data-i18n="features.cards.shopping.desc">
+            Your list builds itself from your meals. Every ingredient, organized by aisle - ready when you are. No
             manual work.
           </div>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-icon">👥</div>
-          <div class="feature-title">Real-Time Collaboration</div>
-          <div class="feature-desc">
+          <div class="feature-title" data-i18n="features.cards.collab.title">Real-Time Collaboration</div>
+          <div class="feature-desc" data-i18n="features.cards.collab.desc">
             Plan and shop together without the back-and-forth. Share your week, update in real time, and stay in sync.
           </div>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">🤖</div>
-          <div class="feature-title">AI Recipe Images</div>
-          <div class="feature-desc">
-            Get meal ideas instantly and generate recipe visuals on-device. No cloud, no tracking — just helpful
+          <div class="feature-title" data-i18n="features.cards.ai.title">AI Recipe Images</div>
+          <div class="feature-desc" data-i18n="features.cards.ai.desc">
+            Get meal ideas instantly and generate recipe visuals on-device. No cloud, no tracking - just helpful
             suggestions when you need them.
           </div>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-icon">📶</div>
-          <div class="feature-title">Offline-First</div>
-          <div class="feature-desc">Everything works without internet. Plan at the dinner table, shop in the basement.
+          <div class="feature-title" data-i18n="features.cards.offline.title">Offline-First</div>
+          <div class="feature-desc" data-i18n="features.cards.offline.desc">Everything works without internet. Plan at
+            the dinner table, shop in the basement.
             Syncs automatically when back online.</div>
         </div>
         <div class="feature-card reveal reveal-delay-3">
           <div class="feature-icon">🔒</div>
-          <div class="feature-title">Privacy by Design</div>
-          <div class="feature-desc">No ads. No tracking. No backend servers. Your data lives in your iCloud, encrypted
+          <div class="feature-title" data-i18n="features.cards.privacy.title">Privacy by Design</div>
+          <div class="feature-desc" data-i18n="features.cards.privacy.desc">No ads. No tracking. No backend servers.
+            Your data lives in your iCloud, encrypted
             end-to-end.</div>
         </div>
       </div>
@@ -188,28 +203,28 @@
   <section id="how">
     <div class="container">
       <div class="section-header reveal" style="text-align:center;">
-        <div class="section-label" style="display:inline-flex;">🗺️ HOW IT WORKS</div>
-        <h2 class="section-title">Three steps to a stress-free week</h2>
+        <div class="section-label" style="display:inline-flex;" data-i18n="how.label">🗺️ HOW IT WORKS</div>
+        <h2 class="section-title" data-i18n="how.title">Three steps to a stress-free week</h2>
       </div>
       <div class="steps">
         <div class="step reveal">
           <div class="step-number">1</div>
-          <div class="step-title">Plan your week</div>
-          <div class="step-desc">
-            Choose your meals for the week. Drag, drop, and adjust — it takes minutes, not hours.
+          <div class="step-title" data-i18n="how.steps.one.title">Plan your week</div>
+          <div class="step-desc" data-i18n="how.steps.one.desc">
+            Choose your meals for the week. Drag, drop, and adjust - it takes minutes, not hours.
           </div>
         </div>
         <div class="step reveal reveal-delay-1">
           <div class="step-number">2</div>
-          <div class="step-title">List generated instantly</div>
-          <div class="step-desc">
-            Weekdish turns your meals into a complete shopping list — every ingredient, automatically organized.
+          <div class="step-title" data-i18n="how.steps.two.title">List generated instantly</div>
+          <div class="step-desc" data-i18n="how.steps.two.desc">
+            Weekdish turns your meals into a complete shopping list - every ingredient, automatically organized.
           </div>
         </div>
         <div class="step reveal reveal-delay-2">
           <div class="step-number">3</div>
-          <div class="step-title">Shop together</div>
-          <div class="step-desc">
+          <div class="step-title" data-i18n="how.steps.three.title">Shop together</div>
+          <div class="step-desc" data-i18n="how.steps.three.desc">
             Share the list and shop together. Tick items off in real time and avoid duplicates or forgotten items.
           </div>
         </div>
@@ -222,19 +237,19 @@
       <div class="proof-inner reveal">
         <div class="proof-stat">
           <div class="proof-number">50+</div>
-          <div class="proof-label">minutes saved<br>every week</div>
+          <div class="proof-label" data-i18n-html="proof.one">minutes saved<br>every week</div>
         </div>
         <div class="proof-stat">
           <div class="proof-number">&lt;2s</div>
-          <div class="proof-label">real-time sync<br>between devices</div>
+          <div class="proof-label" data-i18n-html="proof.two">real-time sync<br>between devices</div>
         </div>
         <div class="proof-stat">
           <div class="proof-number">100%</div>
-          <div class="proof-label">automatic list<br>from your meals</div>
+          <div class="proof-label" data-i18n-html="proof.three">automatic list<br>from your meals</div>
         </div>
         <div class="proof-stat">
           <div class="proof-number">0</div>
-          <div class="proof-label">ads, trackers<br>or backend servers</div>
+          <div class="proof-label" data-i18n-html="proof.four">ads, trackers<br>or backend servers</div>
         </div>
       </div>
     </div>
@@ -244,41 +259,43 @@
     <div class="container">
       <div class="waitlist-inner">
         <div id="waitlist-form-block">
-          <div class="section-label" style="display:inline-flex; margin-bottom:16px;">🎁 EARLY ACCESS</div>
-          <h2>Start planning your week<br>the easy way.</h2>
-          <p>
+          <div class="section-label" style="display:inline-flex; margin-bottom:16px;" data-i18n="waitlist.label">🎁
+            EARLY ACCESS</div>
+          <h2 data-i18n-html="waitlist.title">Start planning your week<br>the easy way.</h2>
+          <p data-i18n="waitlist.sub">
             Join the waitlist and get early access to Weekdish before launch. Be among the first to simplify your weekly
             routine.
           </p>
           <div class="waitlist-form">
             <iframe src="https://tally.so/embed/44NdlO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
               loading="lazy" width="100%" height="214" frameborder="0" marginheight="0" marginwidth="0"
-              title="Weekdish Waitlist">
+              title="Weekdish Waitlist" data-i18n-attr="title:waitlist.iframeTitle">
             </iframe>
           </div>
           <div class="perks">
             <div class="perk">
-              <div class="perk-check">✓</div><span>Get access before public launch</span>
+              <div class="perk-check">✓</div><span data-i18n="waitlist.perks.one">Get access before public launch</span>
             </div>
             <div class="perk">
-              <div class="perk-check">✓</div><span>Help shape the product</span>
+              <div class="perk-check">✓</div><span data-i18n="waitlist.perks.two">Help shape the product</span>
             </div>
             <div class="perk">
-              <div class="perk-check">✓</div><span>Exclusive early features</span>
+              <div class="perk-check">✓</div><span data-i18n="waitlist.perks.three">Exclusive early features</span>
             </div>
             <div class="perk">
-              <div class="perk-check">✓</div><span>No spam. Ever.</span>
+              <div class="perk-check">✓</div><span data-i18n="waitlist.perks.four">No spam. Ever.</span>
             </div>
           </div>
         </div>
         <div class="success-msg" id="success-msg">
           <div class="success-icon">🎉</div>
-          <h3>You're on the list!</h3>
-          <p>We'll send you an email as soon as Weekdish is ready.</p>
+          <h3 data-i18n="success.title">You're on the list!</h3>
+          <p data-i18n="success.sub">We'll send you an email as soon as Weekdish is ready.</p>
         </div>
       </div>
     </div>
-  </section>  <footer>
+  </section>
+  <footer>
     <div class="container">
       <div class="footer-inner">
         <div class="footer-logo">
@@ -289,7 +306,7 @@
         </div>
         <div class="launch-badge">
           <div class="launch-dot"></div>
-          <span class="launch-text">LAUNCHING SOON</span>
+          <span class="launch-text" data-i18n="footer.launching">LAUNCHING SOON</span>
         </div>
         <div class="footer-social">
           <a class="social-btn" href="https://x.com/weekdishapp" target="_blank" rel="noopener noreferrer"
@@ -299,12 +316,14 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Weekdish · Made with ❤️ by <a href="https://x.com/vcapilla" target="_blank"
+        <p data-i18n-html="footer.copy">© 2026 Weekdish · Made with ❤️ by <a href="https://x.com/vcapilla" target="_blank"
             rel="noopener noreferrer" style="color:rgba(255,255,255,0.5); text-decoration:underline;">@vcapilla</a> ·
           weekdish.app</p>
         <div style="display:flex; gap:20px;">
-          <a href="/privacy.html" style="font-size:13px; color:rgba(255,255,255,0.35);">Privacy Policy</a>
-          <a href="mailto:hello@weekdish.app" style="font-size:13px; color:rgba(255,255,255,0.35);">Contact</a>
+          <a href="/privacy.html" style="font-size:13px; color:rgba(255,255,255,0.35);" data-i18n="footer.privacy">Privacy
+            Policy</a>
+          <a href="mailto:hello@weekdish.app" style="font-size:13px; color:rgba(255,255,255,0.35);"
+            data-i18n="footer.contact">Contact</a>
         </div>
       </div>
     </div>
