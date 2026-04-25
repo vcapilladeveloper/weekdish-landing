@@ -1142,6 +1142,12 @@
       background: var(--terracotta);
     }
 
+    .social-btn:focus-visible {
+      outline: 2px solid var(--amber);
+      outline-offset: 2px;
+      background: var(--terracotta);
+    }
+
     .footer-bottom {
       margin-top: 32px;
       padding-top: 24px;
@@ -1613,16 +1619,19 @@
           <span class="launch-text">LAUNCHING SOON</span>
         </div>
         <div class="footer-social">
-          <div class="social-btn" title="Twitter / X">𝕏</div>
-          <div class="social-btn" title="LinkedIn">in</div>
+          <a class="social-btn" href="https://x.com/weekdishapp" target="_blank" rel="noopener noreferrer"
+            aria-label="Weekdish on X" title="Twitter / X">𝕏</a>
+          <a class="social-btn" href="https://www.linkedin.com/company/weekdish" target="_blank"
+            rel="noopener noreferrer" aria-label="Weekdish on LinkedIn" title="LinkedIn">in</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Weekdish · Made with ❤️ by <a href="#"
-            style="color:rgba(255,255,255,0.5); text-decoration:underline;">@vcapilla</a> · weekdish.app</p>
+        <p>© 2026 Weekdish · Made with ❤️ by <a href="https://x.com/vcapilla" target="_blank"
+            rel="noopener noreferrer" style="color:rgba(255,255,255,0.5); text-decoration:underline;">@vcapilla</a> ·
+          weekdish.app</p>
         <div style="display:flex; gap:20px;">
-          <a href="#" style="font-size:13px; color:rgba(255,255,255,0.35);">Privacy Policy</a>
-          <a href="#" style="font-size:13px; color:rgba(255,255,255,0.35);">Contact</a>
+          <a href="/privacy.html" style="font-size:13px; color:rgba(255,255,255,0.35);">Privacy Policy</a>
+          <a href="mailto:hello@weekdish.app" style="font-size:13px; color:rgba(255,255,255,0.35);">Contact</a>
         </div>
       </div>
     </div>
